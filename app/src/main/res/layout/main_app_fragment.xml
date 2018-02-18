@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout android:id="@+id/mainAppFragmentLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/turquoise"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="@android:color/background_light"
+            app:srcCompat="@drawable/bss" />
+
+        <Button
+            android:id="@+id/trainingButton"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/black"
+            android:text="Training"
+            android:textColor="@android:color/background_light"
+            android:textSize="30dp" />
+
+
+        <Button
+            android:id="@+id/nutritionButton"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@android:color/black"
+            android:text="Nutrition"
+            android:textColor="@android:color/background_light"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/calorieTrackerButton"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@android:color/black"
+            android:text="Calorie Tracker"
+            android:textColor="@android:color/background_light"
+            android:textSize="@dimen/sign_in_padding" />
+
+        <Button
+            android:id="@+id/aboutBSSButton"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@android:color/black"
+            android:text="About BSS"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/settingButton"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@android:color/black"
+            android:text="Settings"
+            android:textColor="@android:color/background_light"
+            android:textSize="@dimen/sign_in_padding" />
+
+
+    </LinearLayout>
+

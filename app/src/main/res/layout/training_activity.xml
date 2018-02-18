@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/turquoise"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/turquoise">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/turquoise"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/background_light"
+                android:text="Training"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/chestButton"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:background="@android:color/background_dark"
+                android:text="Chest Workouts"
+                android:textColor="@android:color/background_light"
+                android:textSize="@dimen/sign_in_padding" />
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/background_dark"
+                android:text="Back Workouts"
+                android:textColor="@android:color/background_light"
+                android:textSize="@dimen/sign_in_padding" />
+
+            <Button
+                android:id="@+id/LegButton"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/black"
+                android:text="Leg Workouts"
+                android:textColor="@android:color/background_light"
+                android:textSize="@dimen/sign_in_padding" />
+
+            <Button
+                android:id="@+id/shoulderButton"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/background_dark"
+                android:text="Shoulder Workouts"
+                android:textColor="@android:color/background_light"
+                android:textSize="@dimen/sign_in_padding" />
+
+            <Button
+                android:id="@+id/armButton"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@android:color/background_dark"
+                android:text="Arm Workouts"
+                android:textColor="@android:color/background_light"
+                android:textSize="@dimen/sign_in_padding" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

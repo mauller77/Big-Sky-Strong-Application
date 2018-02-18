@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mybigskystrong.bigskystrong">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <application
+
+        android:allowBackup="true"
+        android:icon="@mipmap/bssicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:name=".MainAppActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ChestWorkoutActivity"
+            android:parentActivityName=".TrainingActivity">
+        </activity>
+        <activity android:name=".ChestExercisesActivity"
+            android:parentActivityName=".ChestWorkoutActivity">
+        </activity>
+
+        <activity android:name=".ShoulderWorkoutActivity"
+            android:parentActivityName=".TrainingActivity"></activity>
+        <activity android:name=".ShoulderExercisesActivity"
+            android:parentActivityName=".ShoulderWorkoutActivity"></activity>
+
+        <activity android:name=".LegWorkoutActivity"
+            android:parentActivityName=".TrainingActivity"></activity>
+        <activity android:name=".LegExercisesActivity"
+            android:parentActivityName=".LegWorkoutActivity"></activity>
+
+        <activity android:name=".NutritionActivity"></activity>
+
+        <activity android:name=".TrainingActivity"
+            android:parentActivityName=".MainAppActivity">
+        </activity>
+        <activity android:name=".AboutMeActivity"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".BlankReviewActivity"></activity>
+        <activity android:name=".ExerciseEditorDialogFragment"></activity>
+
+        <activity android:name=".ArmWorkoutActivity"
+            android:parentActivityName=".TrainingActivity">
+        </activity>
+        <activity android:name=".ArmExercisesActivity"
+            android:parentActivityName=".ArmWorkoutActivity">
+        </activity>
+
+        <activity android:name=".BackWorkoutActivity"
+            android:parentActivityName=".TrainingActivity"></activity>
+        <activity android:name=".BackExercisesActivity"
+            android:parentActivityName=".BackWorkoutActivity"
+            >
+        </activity>
+
+        <activity android:name=".CalorieTrackerActivity"
+            android:parentActivityName=".TrainingActivity">
+        </activity>
+
+    </application>
+</manifest>

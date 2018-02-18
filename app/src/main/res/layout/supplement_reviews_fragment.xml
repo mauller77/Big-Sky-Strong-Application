@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/orgainPicButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20sp"
+                android:background="@android:color/background_light"
+                android:scaleType="fitXY"
+                app:srcCompat="@mipmap/orgain_protein_powder" />
+
+            <Button
+                android:id="@+id/orgainWordButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@android:color/black"
+                android:text="Orgain Chocolate Protein Powder"
+                android:textColor="@android:color/background_light"
+                android:textColorHighlight="@color/turquoise"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/cnsixPicButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/background_light"
+                android:scaleType="fitXY"
+                app:srcCompat="@mipmap/cnsix" />
+
+            <Button
+                android:id="@+id/cnsixWordButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@android:color/background_dark"
+                android:text="CNSIX"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/hemoShockPicButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/background_light"
+                android:scaleType="fitXY"
+                app:srcCompat="@mipmap/hemo_shock" />
+
+            <Button
+                android:id="@+id/hemoShockWordButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@android:color/black"
+                android:text="Hemo Shock"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>
