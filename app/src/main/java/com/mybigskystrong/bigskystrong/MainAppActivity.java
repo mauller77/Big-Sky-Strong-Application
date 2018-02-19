@@ -91,7 +91,7 @@ public class MainAppActivity extends AppCompatActivity{
             armWorkout1.add(getString(R.string.P1A3));
             armWorkout1.add(getString(R.string.P1A4));
             armWorkout1.add(getString(R.string.P1A5));
-
+//------------------------------------------------
         //----------------------------------gerardo gabriel arm workout----------------------------------------------
 
             armWorkoutList.add("Gerardo Gabrial Arms");
