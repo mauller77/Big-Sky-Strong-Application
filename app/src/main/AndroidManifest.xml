@@ -20,43 +20,40 @@
         <activity android:name=".ChestWorkoutActivity"
             android:parentActivityName=".TrainingActivity">
         </activity>
-        <activity android:name=".ChestExercisesActivity"
-            android:parentActivityName=".ChestWorkoutActivity">
-        </activity>
 
         <activity android:name=".ShoulderWorkoutActivity"
             android:parentActivityName=".TrainingActivity"></activity>
-        <activity android:name=".ShoulderExercisesActivity"
-            android:parentActivityName=".ShoulderWorkoutActivity"></activity>
 
         <activity android:name=".LegWorkoutActivity"
             android:parentActivityName=".TrainingActivity"></activity>
-        <activity android:name=".LegExercisesActivity"
-            android:parentActivityName=".LegWorkoutActivity"></activity>
 
         <activity android:name=".NutritionActivity"></activity>
 
         <activity android:name=".TrainingActivity"
             android:parentActivityName=".MainAppActivity">
         </activity>
-        <activity android:name=".AboutMeActivity"></activity>
-        <activity android:name=".SettingsActivity"></activity>
-        <activity android:name=".BlankReviewActivity"></activity>
-        <activity android:name=".ExerciseEditorDialogFragment"></activity>
+        <activity android:name=".ArmExerciseActivity"
+            android:parentActivityName=".ArmWorkoutActivity">
+        </activity>
+        <activity android:name=".BackExerciseActivity"
+            android:parentActivityName=".ArmWorkoutActivity">
+        </activity>
+        <activity android:name=".ChestExerciseActivity"
+            android:parentActivityName=".ArmWorkoutActivity">
+        </activity>
+        <activity android:name=".ShoulderExerciseActivity"
+            android:parentActivityName=".ArmWorkoutActivity">
+        </activity>
+        <activity android:name=".LegExerciseActivity"
+            android:parentActivityName=".ArmWorkoutActivity">
+        </activity>
 
         <activity android:name=".ArmWorkoutActivity"
             android:parentActivityName=".TrainingActivity">
         </activity>
-        <activity android:name=".ArmExercisesActivity"
-            android:parentActivityName=".ArmWorkoutActivity">
-        </activity>
 
         <activity android:name=".BackWorkoutActivity"
             android:parentActivityName=".TrainingActivity"></activity>
-        <activity android:name=".BackExercisesActivity"
-            android:parentActivityName=".BackWorkoutActivity"
-            >
-        </activity>
 
         <activity android:name=".CalorieTrackerActivity"
             android:parentActivityName=".TrainingActivity">

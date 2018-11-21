@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/armCoordinatorLayout"
+    android:id="@+id/armWorkoutLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BackWorkoutActivity">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/workoutTypeTextView"
@@ -17,10 +17,13 @@
         android:textColor="@android:color/black"
         android:textSize="36dp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/workoutsRecyclerView"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/workoutTypeTextView"
-        android:background="@color/turquoise" />
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/workoutListView"
+        android:layout_gravity="center_horizontal"
+        android:divider="@null"
+        android:dividerHeight="0dp">
+    </ListView>
+
+</LinearLayout>

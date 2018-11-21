@@ -1,14 +1,10 @@
 package com.mybigskystrong.bigskystrong;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,49 +28,65 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-
-public class BackWorkoutActivity extends AppCompatActivity {
-    Intent trainingActivityIntent;
-    Intent backExerciseActivityIntent;
-    TextView workoutTypeTextView;
+public class ArmExerciseActivity extends AppCompatActivity {
+    Intent ArmActivityIntent;
+    ListView exerciseListView;
+    TextView workoutTextView;
     String jsonString;
-    ListView workoutListView;
+    String workoutName;
+    Intent ArmExercisesIntent;
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.workout_listview);
 
-        workoutTypeTextView = (TextView) findViewById(R.id.workoutTypeTextView);
-        workoutTypeTextView.setText("Back Workouts");
-
-        workoutListView = (ListView) findViewById(R.id.workoutListView);
-        getJson(workoutListView);
+        ArmExercisesIntent = getIntent();
+        bundle = ArmExercisesIntent.getExtras();
+        workoutName = bundle.getString("workoutName");
+        Log.e("aea","Workout Name Passed to Exercise Activity: " + workoutName);
+        workoutTextView = (TextView) findViewById(R.id.workoutTypeTextView);
+        workoutTextView.setText(workoutName);
+        exerciseListView = (ListView) findViewById(R.id.workoutListView);
+        getExercises(exerciseListView);
     }
 
     class singleRow{
-        String workoutName;
-        String workoutDescription;
+        String exerciseName;
 
-        singleRow(String name, String description){
-            this.workoutName = name;
-            this.workoutDescription = description;
+        singleRow(String name){
+            this.exerciseName = name;
         }
     }
 
     class customAdapter extends BaseAdapter {
 
-        ArrayList<BackWorkoutActivity.singleRow> list;
+        ArrayList<ArmExerciseActivity.singleRow> list;
         Context c;
+        String jsonObjectWorkoutName;
 
         customAdapter (Context context,JSONArray jsonArray){
             c = context;
-            list = new ArrayList<BackWorkoutActivity.singleRow>();
+            list = new ArrayList<ArmExerciseActivity.singleRow>();
 
             for (int i=0;i<jsonArray.length();i++){
                 try{
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                    list.add(new BackWorkoutActivity.singleRow(jsonObject.getString("Workout_Name"),jsonObject.getString("Exercise_1")));
+                    String exerciseName = "";
+                    jsonObjectWorkoutName = jsonObject.getString("Workout_Name");
+                    if (jsonObjectWorkoutName.equals(workoutName)){
+                        for (int j = 1 ; j<=jsonObject.length(); j++){
+                            exerciseName = "Exercise_" + Integer.toString(j);
+                            if (jsonObject.getString(exerciseName).equals("") ) {
+                            }else{
+                                list.add(new ArmExerciseActivity.singleRow(jsonObject.getString(exerciseName)));
+                            }
+                        }
+
+                    }
+
+
                 }catch (JSONException e) {
                     Log.e("ma", e.toString());
                 }
@@ -101,44 +113,29 @@ public class BackWorkoutActivity extends AppCompatActivity {
 
             LayoutInflater layoutInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            View row = layoutInflater.inflate(R.layout.single_workout,parent,false);
+            View row = layoutInflater.inflate(R.layout.single_exercise,parent,false);
 
-            Button workoutTitleButton = (Button) row.findViewById(R.id.workoutTitleButton);
-            BackWorkoutActivity.singleRow tmp = list.get(position);
-            workoutTitleButton.setText(tmp.workoutName);
-            workoutTitleButton.setOnClickListener(new View.OnClickListener() {
-                @SuppressLint("NewApi")
-                @Override
-                public void onClick(View view) {
-                    backExerciseActivityIntent = new Intent(getBaseContext(),BackExerciseActivity.class);
-                    Button clickedButton = (Button) view;
-                    String clickedButtonTitle = clickedButton.getText().toString();
-                    Log.e("awa","Clicked Button: " + clickedButtonTitle);
-                    Bundle b = new Bundle();
-                    b.putString("workoutName",clickedButtonTitle);
-                    backExerciseActivityIntent.putExtras(b);
-                    startActivity(backExerciseActivityIntent);
-                }
-            });
+            TextView exerciseTextView = (TextView) row.findViewById(R.id.exerciseTextView);
+            ArmExerciseActivity.singleRow tmp = list.get(position);
+            exerciseTextView.setText(tmp.exerciseName);
 
 
             return row;
         }
     }
 
-    public void getJson(View view){
-        new BackWorkoutActivity.backgroundTask().execute();
+    public void getExercises(View view){
+        new ArmExerciseActivity.backgroundTask().execute();
     }
 
     class backgroundTask extends AsyncTask<Void,Void,JSONArray> {
 
         String jsonURL;
 
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            jsonURL ="https://mybigskystrong.com/Training/androidBackDB.php";
+            jsonURL ="https://mybigskystrong.com/Training/androidArmsDB.php";
         }
 
         @Override
@@ -164,6 +161,7 @@ public class BackWorkoutActivity extends AppCompatActivity {
                 httpURLConnection.disconnect();
                 return jsonArray;
             }catch (IOException e){
+
                 Log.e("ma",e.toString());
             } catch (JSONException e) {
                 Log.e("ma",e.toString());
@@ -175,7 +173,7 @@ public class BackWorkoutActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(JSONArray resultArray) {
-            workoutListView.setAdapter(new BackWorkoutActivity.customAdapter(getBaseContext(),resultArray));
+            exerciseListView.setAdapter(new ArmExerciseActivity.customAdapter(getBaseContext(),resultArray));
         }
 
 
@@ -183,8 +181,8 @@ public class BackWorkoutActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        trainingActivityIntent = new Intent(this,TrainingActivity.class);
-        startActivity(trainingActivityIntent);
+        ArmActivityIntent = new Intent(this,ArmWorkoutActivity.class);
+        startActivity(ArmActivityIntent);
     }
 
     @Override

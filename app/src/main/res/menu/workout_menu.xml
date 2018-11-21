@@ -5,7 +5,4 @@
     <item
         android:id="@+id/settingsItem"
         android:title="Settings" />
-    <item
-        android:id="@+id/addWorkoutItem"
-        android:title="Add Workout" />
 </menu>

@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,7 @@ public class TrainingActivity extends AppCompatActivity implements View.OnClickL
     public Button backWorkoutsButton;
     public Button legWorkoutsButton;
     public Button shoulderWorkoutsButton;
-    public Button armsWoroutButton;
+    public Button armsWorkoutButton;
 
     Intent armWorkoutIntent;
     Intent backWorkoutIntent;
@@ -35,13 +36,13 @@ public class TrainingActivity extends AppCompatActivity implements View.OnClickL
         backWorkoutsButton = (Button) findViewById(R.id.backButton);
         legWorkoutsButton = (Button) findViewById(R.id.LegButton);
         shoulderWorkoutsButton = (Button) findViewById(R.id.shoulderButton);
-        armsWoroutButton = (Button) findViewById(R.id.armButton);
+        armsWorkoutButton = (Button) findViewById(R.id.armButton);
 
         chestWorkoutsButton.setOnClickListener(this);
         backWorkoutsButton.setOnClickListener(this);
         legWorkoutsButton.setOnClickListener(this);
         shoulderWorkoutsButton.setOnClickListener(this);
-        armsWoroutButton.setOnClickListener(this);
+        armsWorkoutButton.setOnClickListener(this);
 
 
 
@@ -82,7 +83,7 @@ public class TrainingActivity extends AppCompatActivity implements View.OnClickL
 
                 break;
             case R.id.armButton:
-
+                Log.e("ta","Arm Workouts Selected");
                 armWorkoutIntent = new Intent(getBaseContext(),ArmWorkoutActivity.class);
                 startActivity(armWorkoutIntent);
 
